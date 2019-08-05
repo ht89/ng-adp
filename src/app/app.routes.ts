@@ -10,6 +10,10 @@ const ROUTES: Routes = [
   {
     path: 'singleton',
     loadChildren: './singleton/singleton.module#SingletonModule'
+  },
+  {
+    path: 'factory',
+    loadChildren: './factory/factory.module#FactoryModule'
   }
 ];
 /*
