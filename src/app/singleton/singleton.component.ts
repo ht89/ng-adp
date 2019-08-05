@@ -19,7 +19,6 @@ export class SingletonComponent implements OnInit {
   }
 
   onInputChange() {
-    console.log(this.greeting);
     this.appService.setGreeting(this.greeting);
   }
 }
