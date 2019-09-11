@@ -14,6 +14,10 @@ const ROUTES: Routes = [
   {
     path: 'factory',
     loadChildren: './factory/factory.module#FactoryModule'
+  },
+  {
+    path: 'promises',
+    loadChildren: './promises/promises.module#PromisesModule'
   }
 ];
 /*
