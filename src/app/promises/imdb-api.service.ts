@@ -32,7 +32,7 @@ export class IMDBAPIService {
          * Map the json movie item to the Movie model
          */
         .then((movie: any) => {
-          console.log('map', movie);
+          // console.log('map', movie);
           return new Movie(
             movie.movie_id,
             movie.title,
