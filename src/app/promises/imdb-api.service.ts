@@ -23,7 +23,7 @@ export class IMDBAPIService {
            * Filters movies by their movie_id
            */
           filter((movie: any) => {
-            console.log('filter', movie);
+            // console.log('filter', movie);
             return movie.movie_id === id;
           })
         )

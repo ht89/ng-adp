@@ -12,5 +12,20 @@ export class PromisesComponent implements OnInit {
 
   ngOnInit() {
     this.imdbApi.fetchOneById(1).then(res => console.log(res));
+
+    this.calTotal().then(res => console.log(res));
+  }
+
+  private calTotal(): Promise<any> {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const nums = [1, 2, 3];
+
+        const total = nums.reduce((acc, currentVal) => acc + currentVal, 0);
+        resolve(total);
+      }, 1000);
+    });
+
+    return promise;
   }
 }
