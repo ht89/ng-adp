@@ -13,16 +13,22 @@ export class PromisesComponent implements OnInit {
   ngOnInit() {
     this.imdbApi.fetchOneById(1).then(res => console.log(res));
 
-    this.calTotal().then(res => console.log(res));
+    this.getRandNum()
+      .then(res => console.log(`Success: ${res}`))
+      .catch(err => console.error(`Error: ${err}`));
   }
 
-  private calTotal(): Promise<any> {
+  private getRandNum(): Promise<any> {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        const nums = [1, 2, 3];
+        // get a number between 1 and 10 inclusive
+        const randNum = Math.floor(Math.random() * 10 + 1);
 
-        const total = nums.reduce((acc, currentVal) => acc + currentVal, 0);
-        resolve(total);
+        if (randNum % 2) {
+          resolve(randNum);
+        } else {
+          reject(randNum);
+        }
       }, 1000);
     });
 
