@@ -16,6 +16,10 @@ export class PromisesComponent implements OnInit {
     this.getRandNum()
       .then(res => console.log(`Success: ${res}`))
       .catch(err => console.error(`Error: ${err}`));
+
+    this.changeStateOnlyOnce()
+      .then(res => console.log('Promised resolved'))
+      .catch(err => console.error('Promise rejected'));
   }
 
   private getRandNum(): Promise<any> {
@@ -30,6 +34,15 @@ export class PromisesComponent implements OnInit {
           reject(randNum);
         }
       }, 1000);
+    });
+
+    return promise;
+  }
+
+  private changeStateOnlyOnce(): Promise<any> {
+    const promise = new Promise((resolve, reject) => {
+      resolve();
+      reject();
     });
 
     return promise;
