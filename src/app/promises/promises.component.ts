@@ -20,6 +20,8 @@ export class PromisesComponent implements OnInit {
     this.changeStateOnlyOnce()
       .then(res => console.log('Promised resolved'))
       .catch(err => console.error('Promise rejected'));
+
+    this.chainPromise();
   }
 
   private getRandNum(): Promise<any> {
@@ -46,5 +48,20 @@ export class PromisesComponent implements OnInit {
     });
 
     return promise;
+  }
+
+  private chainPromise() {
+    const successHandler = val => {
+      console.log(val);
+
+      return val + 1;
+    };
+
+    const p = new Promise((resolve, reject) => {
+      resolve(0);
+    })
+      .then(successHandler)
+      .then(successHandler)
+      .then(successHandler);
   }
 }
