@@ -21,7 +21,9 @@ export class PromisesComponent implements OnInit {
       .then(res => console.log('Promised resolved'))
       .catch(err => console.error('Promise rejected'));
 
-    this.chainPromise();
+    // this.chainPromise();
+
+    this.chainPromise2();
   }
 
   private getRandNum(): Promise<any> {
@@ -63,5 +65,28 @@ export class PromisesComponent implements OnInit {
       .then(successHandler)
       .then(successHandler)
       .then(successHandler);
+  }
+  private chainPromise2() {
+    const incr = val => {
+      console.log(val);
+
+      return ++val;
+    };
+
+    let outerResolve;
+    const firstPromise = new Promise((resolve, reject) => {
+      outerResolve = resolve;
+    });
+
+    firstPromise.then(incr);
+
+    const secondPromise = firstPromise.then(incr);
+    const thirdPromise = secondPromise.then(incr);
+
+    secondPromise.then(incr);
+    firstPromise.then(incr);
+    thirdPromise.then(incr);
+
+    outerResolve(0);
   }
 }
