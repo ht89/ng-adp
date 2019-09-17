@@ -18,6 +18,10 @@ const ROUTES: Routes = [
   {
     path: 'promises',
     loadChildren: './promises/promises.module#PromisesModule'
+  },
+  {
+    path: 'mvc',
+    loadChildren: './mvc/mvc.module#MvcModule'
   }
 ];
 /*
