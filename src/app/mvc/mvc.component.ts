@@ -18,7 +18,5 @@ export class MvcComponent implements OnInit {
 
   signInClick(email: string, password: string) {
     this.model.signIn(email, password);
-
-    return false;
   }
 }
