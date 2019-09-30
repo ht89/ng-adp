@@ -22,6 +22,10 @@ const ROUTES: Routes = [
   {
     path: 'mvc',
     loadChildren: './mvc/mvc.module#MvcModule'
+  },
+  {
+    path: 'mvc2',
+    loadChildren: './mvc2/mvc2.module#Mvc2Module'
   }
 ];
 /*
