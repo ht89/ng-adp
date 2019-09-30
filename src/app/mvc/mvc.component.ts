@@ -9,6 +9,8 @@ import { UserService } from './user.service';
 })
 export class MvcComponent implements OnInit {
   private model: UserModel;
+  email = '';
+  password = '';
 
   constructor(api: UserService) {
     this.model = new UserModel(api);
@@ -16,7 +18,7 @@ export class MvcComponent implements OnInit {
 
   ngOnInit() {}
 
-  signInClick(email: string, password: string) {
-    this.model.signIn(email, password);
+  signInClick() {
+    this.model.signIn(this.email, this.password);
   }
 }

@@ -1,9 +1,11 @@
 <h1>Sign in</h1>
 
-<form action="#" (submit)="signInClick(this.email.value, this.password.value)">
-  email: <input type="text" name="email" id="email" />
+<form action="#" (submit)="signInClick()">
+  email: <input type="text" [(ngModel)]="email" name="email" />
 
-  password: <input type="password" name="password" id="password" />
+  password: <input type="password" [(ngModel)]="password" name="password" />
 
   <input type="submit" />
 </form>
+
+<p *ngIf="model?.user">Signed-in user: {{ model.user.email }} - {{ model.user.password }}</p>
