@@ -18,6 +18,7 @@ export class TimeoutsComponent implements OnInit {
 
     timeout = setTimeout(() => {
       if (sub) {
+        console.log('unsubscribed');
         sub.unsubscribe();
       }
     }, 1000);
