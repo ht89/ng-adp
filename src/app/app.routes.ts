@@ -22,6 +22,10 @@ const ROUTES: Routes = [
   {
     path: 'mvc',
     loadChildren: './mvc/mvc.module#MvcModule'
+  },
+  {
+    path: 'timeouts',
+    loadChildren: './timeouts/timeouts.module#TimeoutsModule'
   }
 ];
 /*
