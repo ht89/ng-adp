@@ -26,6 +26,10 @@ const ROUTES: Routes = [
   {
     path: 'timeouts',
     loadChildren: './timeouts/timeouts.module#TimeoutsModule'
+  },
+  {
+    path: 'circuit-breaker',
+    loadChildren: './circuit-breaker/circuit-breaker.module#CircuitBreakerModule'
   }
 ];
 /*
