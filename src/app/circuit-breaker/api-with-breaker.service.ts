@@ -48,7 +48,7 @@ export class ApiWithBreakerService {
   }
 
   private readyToRetry(url: string): boolean {
-    return this.apis.get(url).lastFail < Date.now() - this.timeWindow;
+    return this.apis.get(url).lastFail < Date.now() - this.timeToRetry;
   }
 
   private isClosed(url: string): boolean {
