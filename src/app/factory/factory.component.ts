@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as heroFactory from './hero-factory';
+import { UserService } from './user.service';
+import { POTOFactory } from './poto-factory';
+import { User } from './user';
 
 @Component({
   selector: 'app-factory',
@@ -8,7 +11,7 @@ import * as heroFactory from './hero-factory';
   styleUrls: ['./factory.component.css']
 })
 export class FactoryComponent implements OnInit {
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     const spiderman = heroFactory.createHero('Peter', 100);
@@ -16,5 +19,16 @@ export class FactoryComponent implements OnInit {
 
     const superman = heroFactory.createHero('Clark', 100);
     superman.introduce();
+
+    this.userService.getUser().subscribe(res => {
+      // won't work althought the left-hand side of assignation is defined as User,
+      // it will be removed when transpiling it to Javascript
+      let user: User = res;
+      // user.hello();
+
+      // this works
+      user = POTOFactory.buildUser(res);
+      user.hello();
+    });
   }
 }
