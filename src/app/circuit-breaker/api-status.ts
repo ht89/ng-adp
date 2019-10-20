@@ -9,7 +9,7 @@ class ApiStatus {
     let success = 0;
     let fail = 0;
 
-    // timeWindow: limited duration during which sth can be done
+    // timeWindow: duration during which sth can take place
     while (this.calls[i].time > Date.now() - timeWindow && i >= 0) {
       if (this.calls[i].status) {
         success++;
