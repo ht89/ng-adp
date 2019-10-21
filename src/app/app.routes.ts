@@ -24,8 +24,13 @@ const ROUTES: Routes = [
     loadChildren: './mvc/mvc.module#MvcModule'
   },
   {
-    path: 'mvc2',
-    loadChildren: './mvc2/mvc2.module#Mvc2Module'
+    path: 'timeouts',
+    loadChildren: './timeouts/timeouts.module#TimeoutsModule'
+  },
+  {
+    path: 'circuit-breaker',
+    loadChildren:
+      './circuit-breaker/circuit-breaker.module#CircuitBreakerModule'
   }
 ];
 /*
