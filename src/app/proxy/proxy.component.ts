@@ -8,11 +8,13 @@ import { ProxyfiedCommand } from './proxyfied-command';
   styleUrls: ['./proxy.component.css']
 })
 export class ProxyComponent implements OnInit {
-  command: ProxyfiedCommand = new ProxyfiedCommand();
+  commands: ProxyfiedCommand[] = [
+    new ProxyfiedCommand(),
+    new ProxyfiedCommand(),
+    new ProxyfiedCommand()
+  ];
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.command.fetchItems());
-  }
+  ngOnInit() {}
 }

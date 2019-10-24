@@ -13,6 +13,7 @@ export class ProxyfiedCommand implements OnlineCommand {
     // can execute code bf calling fetchItems()
     const items = this.real.fetchItems();
     // can execute code af calling fetchItems()
+    console.log(items);
     return items;
   }
 }
