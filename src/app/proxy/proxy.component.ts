@@ -12,5 +12,7 @@ export class ProxyComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.command.fetchItems());
+  }
 }
