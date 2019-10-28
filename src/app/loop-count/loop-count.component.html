@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let book of books; trackBy: trackByFn; let i = index">
+    {{ book.id }} - {{ book.title }}
+  </li>
+</ul>
+
+<button (click)="refresh()">Refresh</button>
