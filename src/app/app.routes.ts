@@ -29,7 +29,12 @@ const ROUTES: Routes = [
   },
   {
     path: 'circuit-breaker',
-    loadChildren: './circuit-breaker/circuit-breaker.module#CircuitBreakerModule'
+    loadChildren:
+      './circuit-breaker/circuit-breaker.module#CircuitBreakerModule'
+  },
+  {
+    path: 'proxy',
+    loadChildren: './proxy/proxy.module#ProxyModule'
   }
 ];
 /*

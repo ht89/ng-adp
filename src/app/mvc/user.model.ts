@@ -2,7 +2,7 @@ import { User } from './user';
 import { UserService } from './user.service';
 
 export class UserModel {
-  private user: User;
+  user: User;
 
   constructor(private api: UserService) {}
 
