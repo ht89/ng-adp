@@ -1,3 +1,5 @@
 <ul>
-  <li>{{ command.fetchItems() | json }}</li>
+  <li *ngFor="let command of commands" (click)="command.fetchItems()">
+    {{ command }}
+  </li>
 </ul>

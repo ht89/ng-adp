@@ -11,6 +11,7 @@ export class ProxyfiedCommand implements OnlineCommand {
   // This only exists as a placeholder. If needed, we'll use the real command
   fetchItems(): Item[] {
     const items = this.real.fetchItems();
+    console.log(items);
     return items;
   }
 }
