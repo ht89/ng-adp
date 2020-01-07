@@ -17,13 +17,13 @@ export class PromisesComponent implements OnInit {
       .then(res => console.log(`Success: ${res}`))
       .catch(err => console.error(`Error: ${err}`));
 
-    this.changeStateOnlyOnce()
-      .then(res => console.log('Promised resolved'))
-      .catch(err => console.error('Promise rejected'));
+    // this.changeStateOnlyOnce()
+    //   .then(res => console.log('Promised resolved'))
+    //   .catch(err => console.error('Promise rejected'));
 
     // this.chainPromise();
 
-    this.chainPromise2();
+    // this.chainPromise2();
   }
 
   private getRandNum(): Promise<any> {

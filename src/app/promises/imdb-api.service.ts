@@ -8,7 +8,7 @@ export class IMDBAPIService {
   constructor(private http: HttpClient) {}
 
   fetchOneById(id: number): Promise<Movie> {
-    console.log('fetchOneById', id);
+    // console.log('fetchOneById', id);
 
     return (
       this.http
