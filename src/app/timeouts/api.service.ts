@@ -9,6 +9,10 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   get(): Observable<any> {
-    return of('data');
+    let res;
+
+    setTimeout(() => (res = 'data'), 3000);
+
+    return of(res);
   }
 }

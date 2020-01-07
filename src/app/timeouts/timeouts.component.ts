@@ -10,11 +10,13 @@ export class TimeoutsComponent implements OnInit {
   constructor(private api: ApiService) {
     let timeout;
 
-    const sub = this.api.get()
-      .subscribe(res => {
+    const sub = this.api.get().subscribe(res => {
+      if (res) {
         console.log(res);
-        clearTimeout(timeout);
-      });
+      }
+
+      clearTimeout(timeout);
+    });
 
     timeout = setTimeout(() => {
       if (sub) {
