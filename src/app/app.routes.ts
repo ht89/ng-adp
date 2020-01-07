@@ -35,6 +35,10 @@ const ROUTES: Routes = [
   {
     path: 'proxy',
     loadChildren: './proxy/proxy.module#ProxyModule'
+  },
+  {
+    path: 'loop-count',
+    loadChildren: './loop-count/loop-count.module#LoopCountModule'
   }
 ];
 /*

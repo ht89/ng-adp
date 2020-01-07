@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let item of commands" (click)="item.fetchItems()">
-    {{ item }}
+  <li *ngFor="let command of commands" (click)="command.fetchItems()">
+    {{ command }}
   </li>
 </ul>

@@ -1,5 +1,5 @@
-import { OnlineCommand, Item } from './online-command';
-import { RealCommand } from './real-command';
+import { OnlineCommand, Item } from "./online-command";
+import { RealCommand } from "./real-command";
 
 export class ProxyfiedCommand implements OnlineCommand {
   private real: RealCommand;
@@ -12,7 +12,6 @@ export class ProxyfiedCommand implements OnlineCommand {
   fetchItems(): Item[] {
     // can execute code bf calling fetchItems()
     const items = this.real.fetchItems();
-    // can execute code af calling fetchItems()
     console.log(items);
     return items;
   }
