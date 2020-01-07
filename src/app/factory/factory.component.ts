@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as heroFactory from './hero-factory';
 import { UserService } from './user.service';
 import { POTOFactory } from './poto-factory';
 import { User } from './user';
+import { HeroFactory } from './hero-factory';
 
 @Component({
   selector: 'app-factory',
@@ -14,10 +14,10 @@ export class FactoryComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    const spiderman = heroFactory.createHero('Peter', 100);
+    const spiderman = new HeroFactory('Peter', 100);
     spiderman.introduce();
 
-    const superman = heroFactory.createHero('Clark', 100);
+    const superman = new HeroFactory('Clark', 100);
     superman.introduce();
 
     this.userService.getUser().subscribe(res => {

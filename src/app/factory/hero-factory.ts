@@ -11,7 +11,3 @@ export class HeroFactory {
     console.log(`Hello, I am ${this.name}. Pleased to meet you.`);
   }
 }
-
-export function createHero(name: string, health: number) {
-  return new HeroFactory(name, health);
-}
