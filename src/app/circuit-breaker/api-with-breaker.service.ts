@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApiWithBreakerService {
   private apis: Map<string, ApiStatus>;
   private failPercentage = 0.2;
+  // 24hrs
   private timeWindow = 60 * 60 * 24;
   private timeToRetry = 60;
 
@@ -89,10 +90,7 @@ export class ApiWithBreakerService {
     }
 
     // check to see if it's using a Country Code Top Level Domain (ccTLD) i.e. '.me.uk'
-    if (
-      splitArr[arrLength - 2].length === 2 &&
-      splitArr[arrLength - 1].length === 2
-    ) {
+    if (splitArr[arrLength - 1].length === 2) {
       domain = splitArr[arrLength - 3] + '.' + domain;
     }
 

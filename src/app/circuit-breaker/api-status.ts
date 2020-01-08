@@ -1,4 +1,4 @@
-/* Keep track of API calls */
+/* Keep track of calls to an API */
 
 class ApiStatus {
   lastFail: number;
