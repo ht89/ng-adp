@@ -52,10 +52,11 @@ export class ApiWithBreakerService {
     return this.apis.get(url).lastFail < Date.now() - this.timeToRetry;
   }
 
+  /* check if the circuit should be closed => allow calls to API */
   private isClosed(url: string): boolean {
     return (
       !this.apis.get(url) ||
-      this.apis.get(url).computeFailPercentage(this.timeWindow) >
+      this.apis.get(url).computeFailPercentage(this.timeWindow) <=
         this.failPercentage
     );
   }
