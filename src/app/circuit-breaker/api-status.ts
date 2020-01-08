@@ -1,3 +1,5 @@
+/* Keep track of API calls */
+
 class ApiStatus {
   lastFail: number;
   calls: Call[];
