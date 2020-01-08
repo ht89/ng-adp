@@ -7,9 +7,10 @@ import { HttpClient } from '@angular/common/http';
 export class ApiWithBreakerService {
   private apis: Map<string, ApiStatus>;
   private failPercentage = 0.2;
-  // 24hrs
-  private timeWindow = 60 * 60 * 24;
-  private timeToRetry = 60;
+  // 24hrs in ms
+  private timeWindow = 1000 * 60 * 60 * 24;
+  // 1 minute in ms
+  private timeToRetry = 1000 * 60;
 
   constructor(private http: HttpClient) {}
 
