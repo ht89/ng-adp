@@ -22,7 +22,7 @@ export class FactoryComponent implements OnInit {
 
     this.userService.getUser().subscribe(res => {
       // won't work althought the left-hand side of assignation is defined as User,
-      // it will be removed when transpiling it to Javascript
+      // it will be removed when transpiling it to Javascript (since res is of type 'any')
       let user: User = res;
       // user.hello();
 
