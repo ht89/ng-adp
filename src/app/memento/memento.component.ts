@@ -14,6 +14,8 @@ export class MementoComponent implements OnInit {
   constructor(private api: IMDBAPIService) {}
 
   ngOnInit() {
+    // Care taker
+
     const originator = new Originator<string>();
     originator.set('State 1');
     originator.set('State 2');
