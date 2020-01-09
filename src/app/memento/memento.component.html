@@ -1,1 +1,12 @@
-<p>memento works!</p>
+<div *ngFor="let movie of movies">
+  <form>
+    Title: <input type="text" name="title" [(ngModel)]="movie.title" />
+
+    Release Year:
+    <input type="text" name="release-year" [(ngModel)]="movie.release_year" />
+
+    <button (click)="reset(movie)">Reset</button>
+  </form>
+
+  <br />
+</div>

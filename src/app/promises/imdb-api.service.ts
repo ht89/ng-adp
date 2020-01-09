@@ -7,6 +7,40 @@ import { flatMap, filter } from 'rxjs/operators';
 export class IMDBAPIService {
   constructor(private http: HttpClient) {}
 
+  fetchAll(): Promise<Movie[]> {
+    return (
+      this.http
+        .get('../../assets/movies.json')
+        .toPromise()
+        /**
+         * Map the json movie item to the Movie model
+         */
+        .then((res: any) => {
+          return res.movies.map(
+            movie =>
+              new Movie(
+                movie.movie_id,
+                movie.title,
+                movie.phase,
+                movie.category_name,
+                movie.release_year,
+                movie.running_time,
+                movie.rating_name,
+                movie.disc_format_name,
+                movie.number_discs,
+                movie.viewing_format_name,
+                movie.aspect_ratio_name,
+                movie.status,
+                movie.release_date,
+                movie.budget,
+                movie.gross,
+                movie.time_stamp
+              )
+          );
+        })
+    );
+  }
+
   fetchOneById(id: number): Promise<Movie> {
     // console.log('fetchOneById', id);
 
