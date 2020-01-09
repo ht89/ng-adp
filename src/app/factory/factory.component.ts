@@ -27,6 +27,7 @@ export class FactoryComponent implements OnInit {
       // user.hello();
 
       // this works
+      // Using a factory is more reusable & encapsulates the object instantiation logic
       user = POTOFactory.buildUser(res);
       user.hello();
     });
