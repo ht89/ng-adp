@@ -39,6 +39,10 @@ const ROUTES: Routes = [
   {
     path: 'loop-count',
     loadChildren: './loop-count/loop-count.module#LoopCountModule'
+  },
+  {
+    path: 'memento',
+    loadChildren: './memento/memento.module#MementoModule'
   }
 ];
 /*
